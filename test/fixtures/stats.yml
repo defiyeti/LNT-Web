@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  user_id: 
+  electricity_usage: 
+  water_usage: 
+  natural_gas_usage: 
+  month: MyString
+  year: 
+
+two:
+  id: 
+  user_id: 
+  electricity_usage: 
+  water_usage: 
+  natural_gas_usage: 
+  month: MyString
+  year: 

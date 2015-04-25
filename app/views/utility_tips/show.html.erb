@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @utility_tip.id %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @utility_tip.order %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @utility_tip.text %>
+</p>
+
+<%= link_to 'Edit', edit_utility_tip_path(@utility_tip) %> |
+<%= link_to 'Back', utility_tips_path %>

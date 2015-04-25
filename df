@@ -1,0 +1,103 @@
+********************************* 1. row *********************************
+                    id: 1
+                 email: test@test.com
+    encrypted_password: $2a$10$gWr4NrrmDeM9i4uaQ6FzdeJZW95P/qY35CtQCZjBw17aiHhydB...
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 2
+    current_sign_in_at: 2015-04-03 18:56:19 UTC
+       last_sign_in_at: 2015-04-03 18:53:28 UTC
+    current_sign_in_ip: 129.110.241.140
+       last_sign_in_ip: 129.110.241.140
+  authentication_token: y8RY6dxVv8ZogJhr_QWh
+              zip_code: 
+      uses_electricity: 
+            uses_water: 
+      uses_natural_gas: 
+********************************* 2. row *********************************
+                    id: 2
+                 email: test@gmail.com
+    encrypted_password: $2a$10$cBXAmVO5gRGiBDh5Finj2.bF4A3o7VCYF0nes4Ra5UtpdjWNvloK2
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 3
+    current_sign_in_at: 2015-04-11 01:55:40 UTC
+       last_sign_in_at: 2015-04-07 21:57:07 UTC
+    current_sign_in_ip: 129.110.242.89
+       last_sign_in_ip: 129.110.241.146
+  authentication_token: _TLiK19ccNA-k27o4YMA
+              zip_code: 75080
+      uses_electricity: 
+            uses_water: 
+      uses_natural_gas: 
+********************************* 3. row *********************************
+                    id: 3
+                 email: derpy@test.com
+    encrypted_password: $2a$10$qZ5AE/oMDBgK6xea5a4hrO88dfg6w0OAGrupntoIEPiDvd7afOsD.
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 10
+    current_sign_in_at: 2015-04-10 18:14:02 UTC
+       last_sign_in_at: 2015-04-10 18:06:13 UTC
+    current_sign_in_ip: 129.110.241.77
+       last_sign_in_ip: 129.110.241.218
+  authentication_token: Yx9z4kQLKErd_RDiiuiE
+              zip_code: 75080
+      uses_electricity: 
+            uses_water: 
+      uses_natural_gas: 
+********************************* 4. row *********************************
+                    id: 4
+                 email: omg@omg.com
+    encrypted_password: $2a$10$BX.Gu1weolh3HyvCRr6rn.N78xXesvEzmIAkmXUd6hiovz4YiFY7a
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2015-04-11 02:18:31 UTC
+       last_sign_in_at: 2015-04-11 02:18:31 UTC
+    current_sign_in_ip: 129.110.242.91
+       last_sign_in_ip: 129.110.242.91
+  authentication_token: MbfpYUC4HtdofCbs5LRK
+              zip_code: 
+      uses_electricity: 
+            uses_water: 
+      uses_natural_gas: 
+********************************* 5. row *********************************
+                    id: 5
+                 email: wat@wat.com
+    encrypted_password: $2a$10$eOBJTnOS8uo.K75ZO35YReoOgleDAYJeoqQzF3m0eM1apKX2e1j2.
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2015-04-11 02:22:20 UTC
+       last_sign_in_at: 2015-04-11 02:22:20 UTC
+    current_sign_in_ip: 129.110.242.91
+       last_sign_in_ip: 129.110.242.91
+  authentication_token: TKZHarvDj8BsWpLvoaBw
+              zip_code: 
+      uses_electricity: 
+            uses_water: 
+      uses_natural_gas: 
+********************************* 6. row *********************************
+                    id: 6
+                 email: alfhei@akfjriej.com
+    encrypted_password: $2a$10$oVB9M/6oDauKM.QyFogxXOHaKzG65nlVg.uLYdQPNwHhpn5/h4jze
+  reset_password_token: 
+reset_password_sent_at: 
+   remember_created_at: 
+         sign_in_count: 1
+    current_sign_in_at: 2015-04-11 02:26:27 UTC
+       last_sign_in_at: 2015-04-11 02:26:27 UTC
+    current_sign_in_ip: 129.110.242.91
+       last_sign_in_ip: 129.110.242.91
+  authentication_token: xCbwUXzCBkqs7fueU7L6
+              zip_code: 
+      uses_electricity: 
+            uses_water: 
+      uses_natural_gas: 
+6 rows in set

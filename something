@@ -1,0 +1,3 @@
+
+  Parameters: {"authenticity_token"=>"goSKOWr6OCvWhyGGsyTWxiBE2DBRnty5PUCighjF9RURe3hEcvqsj1U9kAlzbB0RkK+bDG7alKK2y+d2njp94w==", "email"=>"derpy@test.com", "password"=>"[FILTERED]"}
+  Parameters: {"authenticity_token"=>"1IZKXx7fiBrJ+cJI/BeGMNOcSi/PpccZna/jEHMr2ZG+S41zwAPYBM8XFzTqJFD0rhTFQMkCtrHRHKNok5Xpiw==", "user"=>{"email"=>"email1@gmail.com", "password"=>"[FILTERED]"}}

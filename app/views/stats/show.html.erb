@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @stat.id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @stat.user_id %>
+</p>
+
+<p>
+  <strong>Electricity usage:</strong>
+  <%= @stat.electricity_usage %>
+</p>
+
+<p>
+  <strong>Water usage:</strong>
+  <%= @stat.water_usage %>
+</p>
+
+<p>
+  <strong>Natural gas usage:</strong>
+  <%= @stat.natural_gas_usage %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @stat.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @stat.year %>
+</p>
+
+<%= link_to 'Edit', edit_stat_path(@stat) %> |
+<%= link_to 'Back', stats_path %>

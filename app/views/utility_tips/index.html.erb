@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<center>
+
+<h1>Listing Utility Tips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Order</th>
+      <th>Text</th>
+			<th>Utility ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @utility_tips.each do |utility_tip| %>
+      <tr>
+        <td><%= utility_tip.id %></td>
+        <td><%= utility_tip.order %></td>
+        <td><%= utility_tip.text %></td>
+				<td><%= utility_tip.utility_id %></td>
+        <td><%= link_to 'Edit', edit_utility_tip_path(utility_tip) %></td>
+        <td><%= link_to 'Destroy', utility_tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Utility tip', new_utility_tip_path %>
+
+</center>
