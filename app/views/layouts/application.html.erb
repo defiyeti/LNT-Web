@@ -1,17 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title><%= content_for?(:title) ? yield(:title) : "LeaveNoTrace" %></title>
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+ 
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  	<title><%= content_for?(:title) ? yield(:title) : "Leave No Trace" %></title>
+ 
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-
-  	<%= yield %>
-
+ 
+  <body>
+    <div class="row">
+      <div class="large-12 columns">
+ 
+        <!-- Navigation -->
+ 
+        <div class="row">
+          <div class="large-12 columns">
+ 
+            <nav class="top-bar">
+              <ul class="title-area">
+                <!-- Title Area -->
+                <li class="name">
+                  <h1><a href="/">Leave No Trace</a></h1>
+                </li>
+              </ul>
+ 
+              <section class="top-bar-section">
+                <!-- Right Nav Section -->
+                <ul class="right">
+                  <% if current_admin %>
+                  	<li class="divider"></li>
+                    <li><%= link_to 'Utility Tips', utility_tips_path %></li>
+                    <li class="divider"></li>
+ 
+                    <li class="has-dropdown not-click">
+                      <%= link_to current_admin.email, '#'%>
+                      <ul class="dropdown">
+                        <li class="divider"></li>
+                        <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete %></li>
+                        <li class="divider"></li>
+                      </ul>
+                    </li>
+                  <% end %>
+                </ul>
+              </section>
+            </nav>
+            <!-- End Top Bar -->
+          </div>
+        </div>
+        <!-- End Navigation -->
+ 
+        <!-- Flash messages -->
+        <div class="row">
+          <div class="large-12 columns">
+            <% if flash[:notice] %>
+              <div data-alert class="alert-box success">
+                <a href="#" class="close">&times;</a>
+                <%= flash[:notice] %>
+              </div>
+            <% end %>
+ 
+            <% if flash[:alert] %>
+              <div data-alert class="alert-box alert">
+                <a href="#" class="close">&times;</a>
+                <%= flash[:alert] %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!-- End Flash messages -->
+ 
+        <!-- Content -->
+        <div class="row">
+          <div class="large-12 columns">
+            <%= yield %>
+          </div>
+        </div>
+        <!-- End Content -->
+ 
+        <!-- Footer -->
+        <footer class="row">
+          <div class="large-12 columns"><hr />
+            <div class="row">
+              <div class="large-6 columns">
+                <p>&copy; 2015 Leave No Trace.</p>
+              </div>
+ 
+              <div class="large-6 columns">
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- End Footer -->
+ 
+      </div>
+    </div>
+ 
     <%= javascript_include_tag "application" %>
   </body>
 </html>

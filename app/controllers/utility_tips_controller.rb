@@ -1,6 +1,6 @@
 class UtilityTipsController < ApplicationController
   before_action :set_utility_tip, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin!
+  before_filter :authenticate_admin!, only: [:edit]
 
   # GET /utility_tips
   # GET /utility_tips.json

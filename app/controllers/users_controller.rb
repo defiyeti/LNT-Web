@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
-  before_filter :authenticate_user!, except: [:show, :stats]
+  before_action :set_user, only: [:edit, :destroy]
+  before_filter :authenticate_user!, except: [:show, :stats, :update]
 
   # POST /users
   # POST /users.json
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     token = params[:user_token]
     email = params[:user_email]
 
-    user = User.where("authentication_token = ? AND email = ?", token, email)
+    user = User.find_by(authentication_token: token, email: email)
 
     respond_to do |format|
       format.json{render json: user.to_json(:include => [:stats])}
@@ -50,10 +50,15 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+		id = params[:id]	
+    token = params[:user_token]
+    email = params[:user_email]
+
+    @user = User.find_by(authentication_token: token, email: email)
     respond_to do |format|
-      if @user.update(user_params)
+			if @user.present? and @user.update(params.require(:user).permit(:uses_electricity, :uses_water, :uses_natural_gas, :zip_code, :email, :password))
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render json: @user.to_json }
       else
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -79,6 +84,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:uses_electricity, :uses_water, :uses_natural_gas, :zip_code, :id, :username, :password, :email, :oauth, :oauth_expire_at)
+      params.require(:user).permit(:uses_electricity, :uses_water, :uses_natural_gas, :zip_code, :password, :email, :oauth, :oauth_expire_at)
     end
 end

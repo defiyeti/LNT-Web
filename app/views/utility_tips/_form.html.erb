@@ -12,22 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br>
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :order %><br>
     <%= f.text_field :order %>
   </div>
   <div class="field">
     <%= f.label :utility_id %><br>
-    <%= f.text_field :utility_id %>
+    <%= f.select :utility_id, [["Electricity",0],["Water",1],["Natural Gas",2]] %>
   </div>
   <div class="field">
     <%= f.label :text %><br>
     <%= f.text_field :text %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create Utility Tip", class: "button" %>
   </div>
 <% end %>
