@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
 		gallons_to_liters = 3.78541
 		water_factor = 0.001 * gallons_to_liters
 		natural_gas_factor = 5.0
-		self.electricity_usage * electricity_factor + self.water_usage * water_factor + self.natural_gas_usage + natural_gas_factor
+		footprint = self.electricity_usage * electricity_factor + self.water_usage * water_factor + self.natural_gas_usage + natural_gas_factor
+		footprint.round(3)
 	end
 
 	def carbon_ranking
@@ -31,7 +32,7 @@ class User < ActiveRecord::Base
 		count = 0
 		c = self.carbon_footprint
 
-		less_than = sorted.index(c)
+		less_than = (sorted.index(c) == nil) ? 0 : sorted.index(c)
 
 		sorted.each do |x|
 			if x == c
@@ -39,9 +40,9 @@ class User < ActiveRecord::Base
 			end
 		end
 
-		#percentile = (less_than + (count*0.5))/sorted.length
+		percentile = (less_than + (count*0.5))/sorted.length
 		avg = usages.inject(0, :+) / sorted.count
-		{percentile: 0.5, average: avg, your_average: c.to_f}
+		{percentile: percentile, average: avg.round(3), your_average: c.to_f}
 	end
 
 	def electricity_ranking
@@ -55,7 +56,7 @@ class User < ActiveRecord::Base
 		count = 0
 		elec = self.electricity_usage
 
-		less_than = sorted.index(elec)
+		less_than = (sorted.index(elec) == nil) ? 0 : sorted.index(elec)
 
 		sorted.each do |x|
 			if x == elec
@@ -65,7 +66,7 @@ class User < ActiveRecord::Base
 
 		percentile = (less_than + (count*0.5))/sorted.length
 		avg = usages.inject(0, :+) / sorted.count
-		{percentile: percentile, average: avg, your_average: elec.to_f}
+		{percentile: percentile, average: avg.round(3), your_average: elec.to_f}
 	end
 
 	def water_ranking
@@ -79,7 +80,7 @@ class User < ActiveRecord::Base
 		count = 0
 		elec = self.water_usage
 
-		less_than = sorted.index(elec)
+		less_than = (sorted.index(elec) == nil) ? 0 : sorted.index(elec)
 
 		sorted.each do |x|
 			if x == elec
@@ -89,7 +90,7 @@ class User < ActiveRecord::Base
 
 		percentile = (less_than + (count*0.5))/sorted.length
 		avg = usages.inject(0, :+) / sorted.count
-		{percentile: percentile, average: avg, your_average: elec.to_f}
+		{percentile: percentile, average: avg.round(3), your_average: elec.to_f}
 	end
 
 	def natural_gas_ranking
@@ -103,7 +104,7 @@ class User < ActiveRecord::Base
 		count = 0
 		elec = self.natural_gas_usage
 
-		less_than = sorted.index(elec)
+		less_than = (sorted.index(elec) == nil) ? 0 : sorted.index(elec)
 
 		sorted.each do |x|
 			if x == elec
@@ -113,19 +114,19 @@ class User < ActiveRecord::Base
 
 		percentile = (less_than + (count*0.5))/sorted.length
 		avg = usages.inject(0, :+) / sorted.count
-		{percentile: percentile, average: avg, your_average: elec.to_f}
+		{percentile: percentile, average: avg.round(3), your_average: elec.to_f}
 	end
 
 	def electricity_usage
 		#Stat.where(user: self).average(:electricity_usage)
-		self.stats.average(:electricity_usage)
+		self.stats.average(:electricity_usage).round(3)
 	end
 
 	def water_usage
-		self.stats.average(:water_usage)
+		self.stats.average(:water_usage).round(3)
 	end
 
 	def natural_gas_usage
-		self.stats.average(:natural_gas_usage)
+		self.stats.average(:natural_gas_usage).round(3)
 	end
 end
