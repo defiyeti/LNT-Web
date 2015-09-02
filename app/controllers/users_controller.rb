@@ -23,6 +23,14 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  # Password recovery option
+  def generate_new_password_email
+    user = User.find(params[:user_id])
+    user.send_reset_password_instructions
+    flash[:notice] = "Reset password instructions have been sent to your email"
+    redirect_to admin_user_path(user)
+  end
 
   # Get /stats/user_id.json
   def stats

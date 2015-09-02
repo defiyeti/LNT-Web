@@ -7,11 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'securerandom'
 
-#users = User.create([{email: 'email1@gmail.com', password: 'derp1234', zip_code: '12345', uses_electricity: true, uses_water: true, uses_natural_gas: true},
-#			 {email: 'email2@gmail.com', password: 'derp1235', zip_code: '12345', uses_electricity: true, uses_water: true, uses_natural_gas: true},
-#			 {email: 'email3@gmail.com', password: 'derp1236', zip_code: '12345', uses_electricity: true, uses_water: true, uses_natural_gas: true}])
-
-users = User.find([14,15,16])
+users = User.create([{email: 'email1@gmail.com', password: 'derp1234', zip_code: '12345', uses_electricity: true, uses_water: true, uses_natural_gas: true},
+			 {email: 'email2@gmail.com', password: 'derp1235', zip_code: '12345', uses_electricity: true, uses_water: true, uses_natural_gas: true},
+			 {email: 'email3@gmail.com', password: 'derp1236', zip_code: '12345', uses_electricity: true, uses_water: true, uses_natural_gas: true}])
 
 months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 

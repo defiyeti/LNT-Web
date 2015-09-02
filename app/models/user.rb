@@ -119,14 +119,14 @@ class User < ActiveRecord::Base
 
 	def electricity_usage
 		#Stat.where(user: self).average(:electricity_usage)
-		self.stats.average(:electricity_usage).round(3)
+		self.stats.average(:electricity_usage).round(3) rescue 0.0
 	end
 
 	def water_usage
-		self.stats.average(:water_usage).round(3)
+		self.stats.average(:water_usage).round(3) rescue 0.0
 	end
 
 	def natural_gas_usage
-		self.stats.average(:natural_gas_usage).round(3)
+		self.stats.average(:natural_gas_usage).round(3) rescue 0.0
 	end
 end
